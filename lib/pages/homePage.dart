@@ -1,17 +1,31 @@
 import 'package:flutter/material.dart';
-import '../components/customDrawer.dart';
+import '../components/customFloatMenu.dart';
+import '../pages/menuPage.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
+        automaticallyImplyLeading: false,
         title: const Text('Aquasys', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
       ),
-      drawer: const CustomDrawer(),
+      body: Container(),
+      floatingActionButton: CustomFloatMenu(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const MenuPage()),
+          );
+        },
+      ),
     );
   }
 }
