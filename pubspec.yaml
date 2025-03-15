@@ -11,6 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  provider: ^6.0.0
+  sqflite: ^2.3.2+1
   cupertino_icons: ^1.0.8
   delightful_toast: ^1.1.0
 
